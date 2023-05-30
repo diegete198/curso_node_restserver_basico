@@ -69,13 +69,9 @@ const userPut = async(req, res = response) =>{
 const userDelete = async(req, res = response) =>{
   
   const { id } = req.params
-  
-  //Fisicamente borrar
-  // const usuario = await Usuario.findByIdAndDelete(id);
 
-  //Borar logico en laBD
   const usuario = await Usuario.findByIdAndUpdate(id, {estado: false});
-
+  
 
   res.json({
     usuario
