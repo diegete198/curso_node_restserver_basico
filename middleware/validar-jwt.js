@@ -10,7 +10,7 @@ const token = req.header('x-token');
 
 if (!token) {
   return res.status(401).json({
-    msg: 'No autorizado'
+    msg: 'Token No autorizado'
   })
 }
 
