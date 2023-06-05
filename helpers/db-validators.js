@@ -43,4 +43,16 @@ const ExisteCategoria = async (id) => {
    }  
   }
 
-    module.exports = {RoleValido,ExisteEmail, ExisteUserId, ExisteCategoria, ExisteProducto};
+  const coleccionPermitida = (coleccion = '', colecciones= []) =>{
+
+    const incluida = colecciones.includes(coleccion);
+
+    if(!incluida) {
+      throw new Error(`la coleccion ${coleccion} no es permitida, ${colecciones}`)
+    }
+
+    return true;
+
+  };
+
+    module.exports = {RoleValido,ExisteEmail, ExisteUserId, ExisteCategoria, ExisteProducto, coleccionPermitida};
